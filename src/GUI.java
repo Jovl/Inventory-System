@@ -315,7 +315,11 @@ public class GUI extends Application {
 				profile.storeInfo();
 			}else{
 				//TODO: Error Label
+				Label errorLabel = new Label("Please fill all fields.");
 				
+				errorLabel.setTranslateX(20);
+				errorLabel.setTranslateY(100);
+				profilePane.getChildren().add(errorLabel);
 			}
 		});
 		
