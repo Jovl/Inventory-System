@@ -313,6 +313,9 @@ public class GUI extends Application {
 				System.out.println(profile.getPhoneNumber());
 				
 				profile.storeInfo();
+			}else{
+				//TODO: Error Label
+				
 			}
 		});
 		
