@@ -151,10 +151,10 @@ public class Inventory extends Item{
 		return viewBkEnv;
 	}
 	
-	public void storeItems() throws IOException{
+	public void storeItems() {
 		
 		try{
-			FileOutputStream inventory = new FileOutputStream("Inventory.txt");
+			FileOutputStream inventoryFile = new FileOutputStream("Inventory.txt");
 			
 		}
 		catch(IOException e){

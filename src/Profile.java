@@ -46,7 +46,7 @@ public class Profile {
 
 	// File I/O method for writing the info to a file
 	public void storeInfo(){
-		Writer writer = null;
+		BufferedWriter writer = null;
 		File profileTxt = new File("Profile.txt");
 		
 		if(profileTxt.exists()){
@@ -57,9 +57,12 @@ public class Profile {
 			writer = new BufferedWriter(new OutputStreamWriter(
 					new FileOutputStream("Profile.txt"), "utf-8"));
 			writer.write(firstName);
-			writer.write(" " + lastName);
-			writer.write(" " + email);
-			writer.write(" " + phoneNumber);
+			writer.newLine();
+			writer.write(lastName);
+			writer.newLine();
+			writer.write(email);
+			writer.newLine();
+			writer.write(phoneNumber);
 			
 		} catch (IOException e){
 			e.printStackTrace();

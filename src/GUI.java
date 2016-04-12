@@ -1,4 +1,3 @@
-
 /* ************************************
 * File: GUI.java
 * Assignment: 
@@ -43,7 +42,7 @@ public class GUI extends Application {
 
 	// screen panes
 	private GridPane profilePane, orderPane, supervisorPane, workflowPane;
-	private StackPane bgPane1, bgPane2, bgPane3, bgPane4; // will hold the background image
+	private StackPane bgPane1, bgPane2, bgPane3, bgPane4; // TODO: hold the background image
 
 	// creates the pane to hold the menu's tabs
 	private TabPane tabPane;
@@ -171,13 +170,6 @@ public class GUI extends Application {
 		//order submission button
 		// submits the item totals
 		orderSubmit.setOnAction(e -> {
-			
-			try {
-				inventory.storeItems();
-			} catch (Exception e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
 			
 //			inventory.getReplyEnv().setReqAmount();
 //			inventory.getWindow10().setReqAmount();
@@ -439,7 +431,7 @@ public class GUI extends Application {
 		
 		approvedBoxWF.getChildren().addAll(approvedOrds, approvedListWF);
 		currentTask.getChildren().addAll(currentTaskList, taskItemsLV);
-		addressBoxWF.getChildren().addAll(infoWF, wfStreet, wfCityStateZip);
+		addressBoxWF.getChildren().addAll(infoWF, wfStreet, wfCityStateZip, orderFilled);
 		
 		//formatting
 		approvedBoxWF.setMaxSize(150, 500);
