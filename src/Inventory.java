@@ -1,9 +1,11 @@
+import java.io.BufferedWriter;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 
 public class Inventory extends Item{
-
-	private Item replyEnv = new Item();
+	
+	Item replyEnv = new Item();
 	// #9 reply envelopes 1
 	
 	Item window10 = new Item();
@@ -151,14 +153,52 @@ public class Inventory extends Item{
 		return viewBkEnv;
 	}
 	
+	public void setItemNames(){
+		
+		replyEnv.setItemName("Reply Envelope");
+		window10.setItemName("#10 Window Ennvelope");
+		admitEnv.setItemName("Admit Envelope");
+		admitFold.setItemName("Admit Folder");
+		maps.setItemName("Campus Map");
+		dbPcPennant.setItemName("DB/PC Pennant");
+		dbPennant.setItemName("DB Pennant");
+		engPoster.setItemName("Engineering Poster");
+		intGradBroch.setItemName("International Graduate Brochure");
+		intGradList.setItemName("International Graduate Checklist");
+		inqCards.setItemName("Inquiry Card");
+		lanyard.setItemName("Lanyard");
+		magEnv.setItemName("Magazine Envelope");
+		natSecurPoster.setItemName("National Security Poster");
+		pilotPens.setItemName("Pilot Pen");
+		presFold.setItemName("Presentation Folder");
+		props.setItemName("Propeller");
+		transferBro.setItemName("Transfer Brochure");
+		travPiece.setItemName("Travel Piece");
+		viewBook.setItemName("View Book");
+		viewBkEnv.setItemName("View Book Envelope");
+		
+	}
+	
 	public void storeItems() {
 		
+		BufferedWriter writer = null; // initializes the writer
+//		File profileTxt = new File("Profile.txt");
+		
 		try{
-			FileOutputStream inventoryFile = new FileOutputStream("Inventory.txt");
+			writer = new BufferedWriter(new OutputStreamWriter(
+					new FileOutputStream("Inventory.txt"), "utf-8"));
 			
-		}
-		catch(IOException e){
+			writer.write(replyEnv.getItemName());
+			writer.newLine();
+			
+		} catch (IOException e){
+			 
 			e.printStackTrace();
+		}finally{
+			
+			try{writer.close();} catch (Exception e)
+			{e.printStackTrace();}
+			
 		}
 		
 		

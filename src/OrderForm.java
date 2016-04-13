@@ -70,5 +70,7 @@ public class OrderForm {
 	public void setCampusTime(String campusTime) {
 		this.campusTime = campusTime;
 	}
+	
+	
 
 }

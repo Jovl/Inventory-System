@@ -1,9 +1,7 @@
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
-import java.io.Writer;
 
 public class Profile {
 
@@ -46,12 +44,9 @@ public class Profile {
 
 	// File I/O method for writing the info to a file
 	public void storeInfo(){
-		BufferedWriter writer = null;
-		File profileTxt = new File("Profile.txt");
 		
-		if(profileTxt.exists()){
-			
-		}
+		BufferedWriter writer = null; // initializes the writer
+//		File profileTxt = new File("Profile.txt");
 		
 		try{
 			writer = new BufferedWriter(new OutputStreamWriter(
@@ -65,10 +60,13 @@ public class Profile {
 			writer.write(phoneNumber);
 			
 		} catch (IOException e){
+			 
 			e.printStackTrace();
 		}finally{
+			
 			try{writer.close();} catch (Exception e)
 			{e.printStackTrace();}
+			
 		}
 		
 	}
