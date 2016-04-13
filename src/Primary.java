@@ -1,5 +1,5 @@
 /* ************************************
-* File: GUI.java
+* File: Primary.java
 * Assignment: 
 * Author: Jeremiah Lantzer
 * Collaborations: 

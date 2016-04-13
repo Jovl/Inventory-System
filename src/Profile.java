@@ -1,3 +1,16 @@
+/* ************************************
+* File: Profile.java
+* Assignment: 
+* Author: Jeremiah Lantzer
+* Collaborations: 
+* Date: 
+*
+*Variable List: 
+*
+*Method List: 
+*
+************************************ */
+
 import java.io.BufferedWriter;
 import java.io.FileOutputStream;
 import java.io.IOException;

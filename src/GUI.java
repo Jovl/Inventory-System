@@ -172,10 +172,38 @@ public class GUI extends Application {
 		final TextField field21 = new TextField();
 		Label label21 = new Label("Viewbook Envelope:");
 		
+		// text fields and labels for shipping off campus
+		Label shipLabel = new Label("Shipping");
+
+		final TextField streetField = new TextField();
+		streetField.setPromptText("Street");
+		
+		final TextField cityField = new TextField();
+		cityField.setPromptText("City");
+
+		final TextField stateField = new TextField();
+		stateField.setPromptText("State");
+
+		final TextField zipField = new TextField();
+		zipField.setPromptText("Zip Code");
+		
+		// label for on campus section
+		Label campusLabel = new Label("On Campus");
+
+		final TextField locationField = new TextField();
+		locationField.setPromptText("Location");
+		locationField.getText();
+
+		final TextField timeField = new TextField();
+		timeField.setPromptText("Time");
+		timeField.getText();
+		
 		//order submission button
 		// submits the item totals
 		orderSubmit.setOnAction(e -> {
-			
+			if((!streetField.getText().trim().isEmpty() && !cityField.getText().trim().isEmpty() && 
+				!stateField.getText().trim().isEmpty() && !zipField.getText().trim().isEmpty()) ||  
+				(!locationField.getText().trim().isEmpty() && !timeField.getText().isEmpty())){
 			// sets the value of all variables to 
 			inventory.initVals();
 			// sets the name of every item
@@ -249,7 +277,23 @@ public class GUI extends Application {
 			// function to store all items ordered in an order file
 			orderForm.storeOrder(inventory);
 			
-			
+			// receives the shipping information for orders
+			orderForm.setShipStreet(streetField.getText());
+			orderForm.setShipCity(cityField.getText());
+			orderForm.setShipState(stateField.getText());
+			orderForm.setShipZip(zipField.getText());
+			} else {
+				
+				Label fillError = new Label("Please fill all shipping fields ");
+				Label fillError2 = new Label("or all on campus fields");
+				
+				
+				fillError.setTranslateX(520);
+				fillError.setTranslateY(70);
+				fillError2.setTranslateX(520);
+				fillError2.setTranslateY(85);
+				orderPane.getChildren().addAll(fillError, fillError2);
+			}	
 		});
 
 		// vbox to hold the first set of fields
@@ -264,35 +308,8 @@ public class GUI extends Application {
 		orderVbox.setTranslateX(25);
 		orderVbox1.setTranslateX(200);
 
-		// label for the shipping portion of the program
-		Label shipLabel = new Label("Shipping");
 
-		final TextField streetField = new TextField();
-		streetField.setPromptText("Street");
-		streetField.getText();
-
-		final TextField cityField = new TextField();
-		cityField.setPromptText("City");
-		cityField.getText();
-
-		final TextField stateField = new TextField();
-		stateField.setPromptText("State");
-		stateField.getText();
-
-		final TextField zipField = new TextField();
-		zipField.setPromptText("Zip Code");
-		zipField.getText();
-
-		// label for on campus section
-		Label campusLabel = new Label("On Campus");
-
-		final TextField locationField = new TextField();
-		locationField.setPromptText("Location");
-		locationField.getText();
-
-		final TextField timeField = new TextField();
-		timeField.setPromptText("Time");
-		timeField.getText();
+		
 
 		VBox shipVbox = new VBox();
 		shipVbox.getChildren().addAll(shipLabel, streetField, cityField, stateField, zipField);
@@ -364,7 +381,7 @@ public class GUI extends Application {
 				
 				profile.storeInfo();
 			}else{
-				//TODO: Error Label
+
 				Label errorLabel = new Label("Please fill all fields.");
 				
 				errorLabel.setTranslateX(20);

@@ -1,7 +1,16 @@
-import java.io.BufferedWriter;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
+/* ************************************
+* File: Inventory.java
+* Assignment: 
+* Author: Jeremiah Lantzer
+* Collaborations: 
+* Date: 
+*
+*Variable List: 
+*
+*Method List: 
+*
+************************************ */
+
 
 public class Inventory extends Item{
 	

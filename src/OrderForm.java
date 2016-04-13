@@ -1,10 +1,5 @@
-import java.io.BufferedWriter;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
-
 /* ************************************
-* File: GUI.java
+* File: OrderForm.java
 * Assignment: 
 * Author: Jeremiah Lantzer
 * Collaborations: 
@@ -15,6 +10,12 @@ import java.io.OutputStreamWriter;
 *Method List: 
 *
 ************************************ */
+
+import java.io.BufferedWriter;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+
 
 public class OrderForm {
 
