@@ -188,7 +188,7 @@ public class Inventory extends Item{
 			writer = new BufferedWriter(new OutputStreamWriter(
 					new FileOutputStream("Inventory.txt"), "utf-8"));
 			
-			writer.write(replyEnv.getItemName());
+			writer.write(replyEnv.getItemName() + " " + replyEnv.getReqAmount());
 			writer.newLine();
 			
 		} catch (IOException e){
@@ -201,6 +201,32 @@ public class Inventory extends Item{
 			
 		}
 		
+		
+	}
+	
+	public void initVals(){
+		
+		replyEnv.setReqAmount(0);
+		window10.setReqAmount(0);
+		admitEnv.setReqAmount(0);
+		admitFold.setReqAmount(0);
+		maps.setReqAmount(0);
+		dbPcPennant.setReqAmount(0);
+		dbPennant.setReqAmount(0);
+		engPoster.setReqAmount(0);
+		intGradBroch.setReqAmount(0);
+		intGradList.setReqAmount(0);
+		inqCards.setReqAmount(0);
+		lanyard.setReqAmount(0);
+		magEnv.setReqAmount(0);
+		natSecurPoster.setReqAmount(0);
+		pilotPens.setReqAmount(0);
+		presFold.setReqAmount(0);
+		props.setReqAmount(0);
+		transferBro.setReqAmount(0);
+		travPiece.setReqAmount(0);
+		viewBook.setReqAmount(0);
+		viewBkEnv.setReqAmount(0);
 		
 	}
 	

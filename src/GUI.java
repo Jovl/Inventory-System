@@ -171,30 +171,79 @@ public class GUI extends Application {
 		// submits the item totals
 		orderSubmit.setOnAction(e -> {
 			
-			inventory.setItemNames(); // sets the name of every item
+			// sets the value of all variables to 
+			inventory.initVals();
+			
+			// sets the name of every item
+			inventory.setItemNames(); 
 			
 			// Receives the input. Converts to an integer. Store in the respective setter.
-			inventory.getReplyEnv().setReqAmount(Integer.parseInt(field1.getText()));
-			inventory.getWindow10().setReqAmount(Integer.parseInt(field2.getText()));
-			inventory.getAdmitEnv().setReqAmount(Integer.parseInt(field3.getText()));
-			inventory.getAdmitFold().setReqAmount(Integer.parseInt(field4.getText()));
-			inventory.getMaps().setReqAmount(Integer.parseInt(field5.getText()));
-			inventory.getDbPcPennant().setReqAmount(Integer.parseInt(field6.getText()));
-			inventory.getDbPennant().setReqAmount(Integer.parseInt(field7.getText()));
-			inventory.getEngPoster().setReqAmount(Integer.parseInt(field8.getText()));
-			inventory.getIntGradBroch().setReqAmount(Integer.parseInt(field9.getText()));
-			inventory.getIntGradList().setReqAmount(Integer.parseInt(field10.getText()));
-			inventory.getInqCards().setReqAmount(Integer.parseInt(field11.getText()));
-			inventory.getLanyard().setReqAmount(Integer.parseInt(field12.getText()));
-			inventory.getMagEnv().setReqAmount(Integer.parseInt(field13.getText()));
-			inventory.getNatSecurPoster().setReqAmount(Integer.parseInt(field14.getText()));
-			inventory.getPilotPens().setReqAmount(Integer.parseInt(field15.getText()));
-			inventory.getPresFold().setReqAmount(Integer.parseInt(field16.getText()));
-			inventory.getProps().setReqAmount(Integer.parseInt(field17.getText()));
-			inventory.getTransferBro().setReqAmount(Integer.parseInt(field18.getText()));
-			inventory.getTravPiece().setReqAmount(Integer.parseInt(field19.getText()));
-			inventory.getViewBook().setReqAmount(Integer.parseInt(field20.getText()));
-			inventory.getViewBkEnv().setReqAmount(Integer.parseInt(field21.getText()));
+			if(!field1.getText().trim().isEmpty()){
+				inventory.getReplyEnv().setReqAmount(Integer.parseInt(field1.getText()));
+			}
+			if(!field2.getText().trim().isEmpty()){
+				inventory.getWindow10().setReqAmount(Integer.parseInt(field2.getText()));
+			}
+			if(!field3.getText().trim().isEmpty()){
+				inventory.getAdmitEnv().setReqAmount(Integer.parseInt(field3.getText()));
+			}
+			if(!field4.getText().trim().isEmpty()){
+				inventory.getAdmitFold().setReqAmount(Integer.parseInt(field4.getText()));
+			}
+			if(!field5.getText().trim().isEmpty()){
+				inventory.getMaps().setReqAmount(Integer.parseInt(field5.getText()));
+			}
+			if(!field6.getText().trim().isEmpty()){
+				inventory.getDbPcPennant().setReqAmount(Integer.parseInt(field6.getText()));
+			}
+			if(!field7.getText().trim().isEmpty()){
+				inventory.getDbPennant().setReqAmount(Integer.parseInt(field7.getText()));
+			}
+			if(!field8.getText().trim().isEmpty()){
+				inventory.getEngPoster().setReqAmount(Integer.parseInt(field8.getText()));
+			}
+			if(!field9.getText().trim().isEmpty()){
+				inventory.getIntGradBroch().setReqAmount(Integer.parseInt(field9.getText()));
+			}
+			if(!field10.getText().trim().isEmpty()){
+				inventory.getIntGradList().setReqAmount(Integer.parseInt(field10.getText()));
+			}
+			if(!field11.getText().trim().isEmpty()){
+				inventory.getInqCards().setReqAmount(Integer.parseInt(field11.getText()));
+			}
+			if(!field12.getText().trim().isEmpty()){
+				inventory.getLanyard().setReqAmount(Integer.parseInt(field12.getText()));
+			}
+			if(!field13.getText().trim().isEmpty()){
+				inventory.getMagEnv().setReqAmount(Integer.parseInt(field13.getText()));
+			}
+			if(!field14.getText().trim().isEmpty()){
+				inventory.getNatSecurPoster().setReqAmount(Integer.parseInt(field14.getText()));
+			}
+			if(!field15.getText().trim().isEmpty()){
+				inventory.getPilotPens().setReqAmount(Integer.parseInt(field15.getText()));
+			}
+			if(!field16.getText().trim().isEmpty()){
+				inventory.getPresFold().setReqAmount(Integer.parseInt(field16.getText()));
+			}
+			if(!field17.getText().trim().isEmpty()){
+				inventory.getProps().setReqAmount(Integer.parseInt(field17.getText()));
+			}
+			if(!field18.getText().trim().isEmpty()){
+				inventory.getTransferBro().setReqAmount(Integer.parseInt(field18.getText()));
+			}
+			if(!field19.getText().trim().isEmpty()){
+				inventory.getTravPiece().setReqAmount(Integer.parseInt(field19.getText()));
+			}
+			if(!field20.getText().trim().isEmpty()){
+				inventory.getViewBook().setReqAmount(Integer.parseInt(field20.getText()));
+			}
+			if(!field21.getText().trim().isEmpty()){
+				inventory.getViewBkEnv().setReqAmount(Integer.parseInt(field21.getText()));
+			}
+			
+			// function to store all items ordered in an order file
+			inventory.storeItems();
 		});
 
 		// vbox to hold the first set of fields
