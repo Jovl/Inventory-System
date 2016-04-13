@@ -171,27 +171,30 @@ public class GUI extends Application {
 		// submits the item totals
 		orderSubmit.setOnAction(e -> {
 			
-//			inventory.getReplyEnv().setReqAmount();
-//			inventory.getWindow10().setReqAmount();
-//			inventory.getAdmitEnv().setReqAmount();
-//			inventory.getAdmitFold().setReqAmount();
-//			inventory.getMaps().setReqAmount();
-//			inventory.getDbPcPennant().setReqAmount();
-//			inventory.getDbPennant().setReqAmount();
-//			inventory.getEngPoster().setReqAmount();
-//			inventory.getIntGradBroch().setReqAmount();
-//			inventory.getIntGradList().setReqAmount();
-//			inventory.getInqCards().setReqAmount();
-//			inventory.getLanyard().setReqAmount();
-//			inventory.getMagEnv().setReqAmount();
-//			inventory.getNatSecurPoster().setReqAmount();
-//			inventory.getPilotPens().setReqAmount();
-//			inventory.getPresFold().setReqAmount();
-//			inventory.getProps().setReqAmount();
-//			inventory.getTransferBro().setReqAmount();
-//			inventory.getTravPiece().setReqAmount();
-//			inventory.getViewBook().setReqAmount();
-//			inventory.getViewBkEnv().setReqAmount();
+			inventory.setItemNames(); // sets the name of every item
+			
+			// Receives the input. Converts to an integer. Store in the respective setter.
+			inventory.getReplyEnv().setReqAmount(Integer.parseInt(field1.getText()));
+			inventory.getWindow10().setReqAmount(Integer.parseInt(field2.getText()));
+			inventory.getAdmitEnv().setReqAmount(Integer.parseInt(field3.getText()));
+			inventory.getAdmitFold().setReqAmount(Integer.parseInt(field4.getText()));
+			inventory.getMaps().setReqAmount(Integer.parseInt(field5.getText()));
+			inventory.getDbPcPennant().setReqAmount(Integer.parseInt(field6.getText()));
+			inventory.getDbPennant().setReqAmount(Integer.parseInt(field7.getText()));
+			inventory.getEngPoster().setReqAmount(Integer.parseInt(field8.getText()));
+			inventory.getIntGradBroch().setReqAmount(Integer.parseInt(field9.getText()));
+			inventory.getIntGradList().setReqAmount(Integer.parseInt(field10.getText()));
+			inventory.getInqCards().setReqAmount(Integer.parseInt(field11.getText()));
+			inventory.getLanyard().setReqAmount(Integer.parseInt(field12.getText()));
+			inventory.getMagEnv().setReqAmount(Integer.parseInt(field13.getText()));
+			inventory.getNatSecurPoster().setReqAmount(Integer.parseInt(field14.getText()));
+			inventory.getPilotPens().setReqAmount(Integer.parseInt(field15.getText()));
+			inventory.getPresFold().setReqAmount(Integer.parseInt(field16.getText()));
+			inventory.getProps().setReqAmount(Integer.parseInt(field17.getText()));
+			inventory.getTransferBro().setReqAmount(Integer.parseInt(field18.getText()));
+			inventory.getTravPiece().setReqAmount(Integer.parseInt(field19.getText()));
+			inventory.getViewBook().setReqAmount(Integer.parseInt(field20.getText()));
+			inventory.getViewBkEnv().setReqAmount(Integer.parseInt(field21.getText()));
 		});
 
 		// vbox to hold the first set of fields

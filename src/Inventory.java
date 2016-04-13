@@ -154,7 +154,7 @@ public class Inventory extends Item{
 	}
 	
 	public void setItemNames(){
-		
+		// function to set the name of every item at once
 		replyEnv.setItemName("Reply Envelope");
 		window10.setItemName("#10 Window Ennvelope");
 		admitEnv.setItemName("Admit Envelope");
