@@ -51,7 +51,9 @@ public class GUI extends Application {
 	// buttons in the program
 	private Button profileSubmit, orderSubmit, superApprove, superDecline, orderFilled;
 	
+	// object names declaration
 	private Inventory inventory;
+	private OrderForm orderForm;
 
 	// class constructor
 	public GUI() {
@@ -87,6 +89,9 @@ public class GUI extends Application {
 		
 		// Inventory object declaration
 		inventory = new Inventory();
+		
+		// orderform object declaration
+		orderForm = new OrderForm();
 
 		/* ---------order tab--------- */
 		// tab
@@ -173,7 +178,6 @@ public class GUI extends Application {
 			
 			// sets the value of all variables to 
 			inventory.initVals();
-			
 			// sets the name of every item
 			inventory.setItemNames(); 
 			
@@ -243,7 +247,9 @@ public class GUI extends Application {
 			}
 			
 			// function to store all items ordered in an order file
-			inventory.storeItems();
+			orderForm.storeOrder(inventory);
+			
+			
 		});
 
 		// vbox to hold the first set of fields

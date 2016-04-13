@@ -28,7 +28,6 @@ public class OrderForm {
 	private String campusLocation;
 	private String campusTime;
 	
-	private Inventory inventory;
 
 	public String getShipStreet() {
 		return shipStreet;
@@ -78,58 +77,98 @@ public class OrderForm {
 		this.campusTime = campusTime;
 	}
 	
-public void storeItems() {
+public void storeOrder(Inventory inventory) {
 		
 		BufferedWriter writer = null; // initializes the writer
 		
-		inventory = new Inventory();
-		
 		try{
 			writer = new BufferedWriter(new OutputStreamWriter(
-					new FileOutputStream("Inventory.txt"), "utf-8"));
+					new FileOutputStream("OrderRequest.txt"), "utf-8"));
 			
+			if(inventory.replyEnv.getReqAmount() != 0){
 			writer.write(inventory.replyEnv.getItemName() + " " + inventory.replyEnv.getReqAmount());
 			writer.newLine();
+			}
+			if(inventory.window10.getReqAmount() != 0){
 			writer.write(inventory.window10.getItemName() + " " + inventory.window10.getReqAmount());
 			writer.newLine();
+			}
+			if(inventory.admitEnv.getReqAmount() != 0){
 			writer.write(inventory.admitEnv.getItemName() + " " + inventory.admitEnv.getReqAmount());
 			writer.newLine();
+			}
+			if(inventory.admitFold.getReqAmount() != 0){
 			writer.write(inventory.admitFold.getItemName() + " " + inventory.admitFold.getReqAmount());
 			writer.newLine();
+			}
+			if(inventory.maps.getReqAmount() != 0){
 			writer.write(inventory.maps.getItemName() + " " + inventory.maps.getReqAmount());
 			writer.newLine();
+			}
+			if(inventory.dbPcPennant.getReqAmount() != 0){
 			writer.write(inventory.dbPcPennant.getItemName() + " " + inventory.dbPcPennant.getReqAmount());
 			writer.newLine();
+			}
+			if(inventory.dbPennant.getReqAmount() != 0){
 			writer.write(inventory.dbPennant.getItemName() + " " + inventory.dbPennant.getReqAmount());
 			writer.newLine();
+			}
+			if(inventory.engPoster.getReqAmount() != 0){
 			writer.write(inventory.engPoster.getItemName() + " " + inventory.engPoster.getReqAmount());
 			writer.newLine();
+			}
+			if(inventory.intGradBroch.getReqAmount() != 0){
 			writer.write(inventory.intGradBroch.getItemName() + " " + inventory.intGradBroch.getReqAmount());
 			writer.newLine();
+			}
+			if(inventory.intGradList.getReqAmount() != 0){
 			writer.write(inventory.intGradList.getItemName() + " " + inventory.intGradList.getReqAmount());
 			writer.newLine();
+			}
+			if(inventory.inqCards.getReqAmount() != 0){
 			writer.write(inventory.inqCards.getItemName() + " " + inventory.inqCards.getReqAmount());
 			writer.newLine();
+			}
+			if(inventory.lanyard.getReqAmount() != 0){
 			writer.write(inventory.lanyard.getItemName() + " " + inventory.lanyard.getReqAmount());
 			writer.newLine();
+			}
+			if(inventory.magEnv.getReqAmount() != 0){
 			writer.write(inventory.magEnv.getItemName() + " " + inventory.magEnv.getReqAmount());
 			writer.newLine();
+			}
+			if(inventory.natSecurPoster.getReqAmount() != 0){
 			writer.write(inventory.natSecurPoster.getItemName() + " " + inventory.natSecurPoster.getReqAmount());
 			writer.newLine();
+			}
+			if(inventory.pilotPens.getReqAmount() != 0){
 			writer.write(inventory.pilotPens.getItemName() + " " + inventory.pilotPens.getReqAmount());
 			writer.newLine();
+			}
+			if(inventory.presFold.getReqAmount() != 0){
 			writer.write(inventory.presFold.getItemName() + " " + inventory.presFold.getReqAmount());
 			writer.newLine();
+			}
+			if(inventory.props.getReqAmount() != 0){
 			writer.write(inventory.props.getItemName() + " " + inventory.props.getReqAmount());
 			writer.newLine();
+			}
+			if(inventory.transferBro.getReqAmount() != 0){
 			writer.write(inventory.transferBro.getItemName() + " " + inventory.transferBro.getReqAmount());
 			writer.newLine();
+			}
+			if(inventory.travPiece.getReqAmount() != 0){
 			writer.write(inventory.travPiece.getItemName() + " " + inventory.travPiece.getReqAmount());
 			writer.newLine();
+			}
+			if(inventory.viewBook.getReqAmount() != 0){
 			writer.write(inventory.viewBook.getItemName() + " " + inventory.viewBook.getReqAmount());
 			writer.newLine();
+			}
+			if(inventory.viewBkEnv.getReqAmount() != 0){
 			writer.write(inventory.viewBkEnv.getItemName() + " " + inventory.viewBkEnv.getReqAmount());
 			writer.newLine();
+			}
 			
 		} catch (IOException e){
 			 
