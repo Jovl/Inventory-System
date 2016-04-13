@@ -11,16 +11,9 @@
 *
 ************************************ */
 
-import java.util.ArrayList;
-import java.util.List;
 import javafx.application.Application;
-import javafx.beans.InvalidationListener;
-import javafx.beans.Observable;
-import javafx.beans.value.ChangeListener;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -29,10 +22,7 @@ import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TabPane.TabClosingPolicy;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -192,11 +182,9 @@ public class GUI extends Application {
 
 		final TextField locationField = new TextField();
 		locationField.setPromptText("Location");
-		locationField.getText();
 
 		final TextField timeField = new TextField();
 		timeField.setPromptText("Time");
-		timeField.getText();
 		
 		//order submission button
 		// submits the item totals
@@ -282,6 +270,11 @@ public class GUI extends Application {
 			orderForm.setShipCity(cityField.getText());
 			orderForm.setShipState(stateField.getText());
 			orderForm.setShipZip(zipField.getText());
+			
+			// receives the on campus time and location for certain orders
+			orderForm.setCampusLocation(locationField.getText());
+			orderForm.setCampusTime(timeField.getText());
+			
 			} else {
 				
 				Label fillError = new Label("Please fill all shipping fields ");
