@@ -86,6 +86,23 @@ public void storeOrder(Inventory inventory) {
 			writer = new BufferedWriter(new OutputStreamWriter(
 					new FileOutputStream("OrderRequest.txt"), "utf-8"));
 			
+			writer.write("Shipping Info: ");
+			writer.newLine();
+			
+			if(shipStreet != null && shipCity != null && shipState != null && shipZip != null){
+				writer.write(shipStreet);
+				writer.newLine();
+				writer.write(shipCity + ", " + shipState + " " + shipZip);
+				writer.newLine();
+				writer.newLine();
+			} else {
+				writer.write(campusLocation);
+				writer.newLine();
+				writer.write(campusTime);
+				writer.newLine();
+				writer.newLine();
+			}
+			
 			if(inventory.replyEnv.getReqAmount() != 0){
 			writer.write(inventory.replyEnv.getItemName() + " " + inventory.replyEnv.getReqAmount());
 			writer.newLine();

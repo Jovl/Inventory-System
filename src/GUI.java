@@ -262,8 +262,7 @@ public class GUI extends Application {
 				inventory.getViewBkEnv().setReqAmount(Integer.parseInt(field21.getText()));
 			}
 			
-			// function to store all items ordered in an order file
-			orderForm.storeOrder(inventory);
+			
 			
 			// receives the shipping information for orders
 			orderForm.setShipStreet(streetField.getText());
@@ -274,6 +273,9 @@ public class GUI extends Application {
 			// receives the on campus time and location for certain orders
 			orderForm.setCampusLocation(locationField.getText());
 			orderForm.setCampusTime(timeField.getText());
+			
+			// function to store all items ordered in an order file
+			orderForm.storeOrder(inventory);
 			
 			} else {
 				
