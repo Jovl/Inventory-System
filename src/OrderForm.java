@@ -78,7 +78,7 @@ public class OrderForm {
 		this.campusTime = campusTime;
 	}
 	
-public void storeOrder(Inventory inventory) {
+public void storeOrder(Inventory inventory, Profile profile) {
 		
 		BufferedWriter writer = null; // initializes the writer
 		
@@ -88,19 +88,28 @@ public void storeOrder(Inventory inventory) {
 			
 			writer.write("Shipping Info: ");
 			writer.newLine();
+			writer.newLine();
+			writer.write(profile.getFirstName() + profile.getLastName());
+			writer.newLine();
 			
-			if(shipStreet != null && shipCity != null && shipState != null && shipZip != null){
+			if(shipStreet != null || shipCity != null || shipState != null || shipZip != null){
+				
 				writer.write(shipStreet);
 				writer.newLine();
 				writer.write(shipCity + ", " + shipState + " " + shipZip);
 				writer.newLine();
 				writer.newLine();
-			} else {
+				
+			}
+			
+			if(campusLocation != null || campusTime != null){
+				
 				writer.write(campusLocation);
 				writer.newLine();
 				writer.write(campusTime);
 				writer.newLine();
 				writer.newLine();
+				
 			}
 			
 			if(inventory.replyEnv.getReqAmount() != 0){

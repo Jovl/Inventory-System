@@ -44,12 +44,13 @@ public class GUI extends Application {
 	// object names declaration
 	private Inventory inventory;
 	private OrderForm orderForm;
+	private Profile profile;
 
 	// class constructor
 	public GUI() {
 
 		// objects needed from other classes
-		Profile profile = new Profile();
+		profile = new Profile();
 
 		// instantiates tabs
 		orderTab = new Tab();
@@ -265,17 +266,29 @@ public class GUI extends Application {
 			
 			
 			// receives the shipping information for orders
+			if(!streetField.getText().trim().isEmpty()){
 			orderForm.setShipStreet(streetField.getText());
+			}
+			if(!cityField.getText().trim().isEmpty()){
 			orderForm.setShipCity(cityField.getText());
+			}
+			if(!stateField.getText().trim().isEmpty()){
 			orderForm.setShipState(stateField.getText());
+			}
+			if(!zipField.getText().trim().isEmpty()){
 			orderForm.setShipZip(zipField.getText());
+			}
 			
 			// receives the on campus time and location for certain orders
+			if(!locationField.getText().trim().isEmpty()){
 			orderForm.setCampusLocation(locationField.getText());
+			}
+			if(!timeField.getText().trim().isEmpty()){
 			orderForm.setCampusTime(timeField.getText());
+			}
 			
 			// function to store all items ordered in an order file
-			orderForm.storeOrder(inventory);
+			orderForm.storeOrder(inventory, profile);
 			
 			} else {
 				
@@ -330,6 +343,7 @@ public class GUI extends Application {
 		/* ---------order tab--------- */
 		//
 		//
+		//
 		/* ---------Profile Tab--------- */
 		// tab
 		profileTab.setText("Profile");
@@ -375,6 +389,7 @@ public class GUI extends Application {
 				System.out.println(profile.getPhoneNumber());
 				
 				profile.storeInfo();
+				
 			}else{
 
 				Label errorLabel = new Label("Please fill all fields.");
@@ -397,6 +412,7 @@ public class GUI extends Application {
 		
 		profilePane.getChildren().addAll(infoVbox);
 		/* ---------Profile Tab--------- */
+		//
 		//
 		//
 		/* ---------supervisor tab--------- */
@@ -463,6 +479,7 @@ public class GUI extends Application {
 		// puts everything into the supervisor pane
 		supervisorPane.getChildren().addAll(currentVOrders, itemsBox, approvedBox);
 		/* ---------supervisor tab--------- */
+		//
 		//
 		//
 		/* ---------work flow tab--------- */
