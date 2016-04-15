@@ -207,7 +207,6 @@ public void storeOrder(Inventory inventory, Profile profile) {
 			
 		}
 		
-		
 	}
 
 }
