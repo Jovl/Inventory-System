@@ -5,9 +5,10 @@
 * 
 * File Overview: This portion of the program
 * is tasked with being the user interface
-* for the student assistants in the mailroom.
+* for the student assistants in the mail
+* room. 
 * 
-* Last Edited: 5/9/2016 
+* Last Edited: 5/10/2016 
 *
 * Variable List: tabPane, workFlowTab, workflowPane,
 * 				 orderFilled
